@@ -1,4 +1,4 @@
-# 🚀 DSA-Solutions by Vishal Singh
+# 🚀 DSA-Solutions of my coding journey 
 
 Welcome to my **Data Structures & Algorithms** practice repository!  
 This repo contains solutions to problems I am solving on platforms like **LeetCode**, **GeeksforGeeks**, and **HackerRank** using **C++**.
