@@ -1,16 +1,45 @@
-class Solution {
-public:
-    int search(vector<int>& nums, int target) {
-        int low = 0, high = nums.size() - 1;
+#include <iostream>
+using namespace std;
 
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
+int main() {
+    int n;
+    cout << "Enter the size of array: ";
+    cin >> n;
 
-            if (nums[mid] == target) return mid; 
-            else if (nums[mid] < target) low = mid + 1;
-            else high = mid - 1; 
-        }
-
-        return -1;
+    int arr[n];
+    cout << "Enter " << n << " elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
-};
+
+    int target;
+    cout << "Enter target to search: ";
+    cin >> target;
+
+    int start = 0;
+    int end = n - 1;
+    int mid;
+    bool found = false;
+
+    while (start <= end) {
+        mid = (start + end) / 2;   // mid nikalna
+
+        if (arr[mid] == target) {   // target mil gaya
+            cout << "Element found at index " << mid << endl;
+            found = true;
+            break;
+        }
+        else if (target > arr[mid]) {   // right me search karo
+            start = mid + 1;
+        }
+        else {                          // left me search karo
+            end = mid - 1;
+        }
+    }
+
+    if (!found) {
+        cout << "Element not found in the array" << endl;
+    }
+
+    return 0;
+}
